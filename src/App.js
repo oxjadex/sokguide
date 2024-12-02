@@ -4,18 +4,17 @@ import SeasonalFoodList from "./SeasonalFoodList";
 import FetchSeasonalFood from "./FetchSeasonFood";
 
 function App() {
-  const [foods, setFoods] = useState([]); // 데이터를 저장할 상태
-  const [loading, setLoading] = useState(false); // 로딩 상태
-  const [error, setError] = useState(null); // 에러 상태
-  const [selectedMonth, setSelectedMonth] = useState(""); // 사용자가 선택한 월
+  const [foods, setFoods] = useState([]); 
+  const [loading, setLoading] = useState(false); 
+  const [error, setError] = useState(null); 
+  const [selectedMonth, setSelectedMonth] = useState(""); 
 
   const handleMonthChange = (month) => {
-    setSelectedMonth(month); // 사용자가 선택한 월 상태 업데이트
+    setSelectedMonth(month);
   };
 
   return (
     <div className="App">
-      {/* FetchSeasonFood에서 데이터를 가져옵니다. */}
       <FetchSeasonalFood
         selectedMonth={selectedMonth}
         setFoods={setFoods}
@@ -45,7 +44,6 @@ function App() {
           <option value="12월">12월</option>
         </select>
       </div>
-      {/* SeasonalFoodList에서 데이터를 표시합니다. */}
       <SeasonalFoodList foods={foods} loading={loading} error={error} />
     </div>
   );
