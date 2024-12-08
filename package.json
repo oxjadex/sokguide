@@ -15,7 +15,7 @@
     "recharts": "^2.13.3",
     "web-vitals": "^2.1.4"
   },
-  "proxy": "http://211.237.50.150:7080/openapi/sample/xml/Grid_20171128000000000572_1/1/5",
+  "proxy": "http://www.kamis.or.kr",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",

@@ -2,12 +2,14 @@ import "./App.css";
 import React, { useState } from "react";
 import SeasonalFoodList from "./SeasonalFoodList";
 import FetchSeasonalFood from "./FetchSeasonFood";
+import PriceComparisonTable from "./PriceComparisonTable";
 
 function App() {
-  const [foods, setFoods] = useState([]); 
-  const [loading, setLoading] = useState(false); 
-  const [error, setError] = useState(null); 
-  const [selectedMonth, setSelectedMonth] = useState(""); 
+  const [foods, setFoods] = useState([]);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(null);
+  const [selectedMonth, setSelectedMonth] = useState("");
+  const [priceData, setPriceData] = useState(null);
 
   const handleMonthChange = (month) => {
     setSelectedMonth(month);
@@ -21,7 +23,9 @@ function App() {
         setLoading={setLoading}
         setError={setError}
       />
-      {/* 사용자에게 월 선택 UI 제공 */}
+      <PriceComparisonTable
+        selectedMonth={selectedMonth}
+      ></PriceComparisonTable>
       <div>
         <label htmlFor="month-select">월을 선택하세요:</label>
         <select
